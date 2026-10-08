@@ -6,7 +6,7 @@ Brain tumor segmentation from MRI using U-Net (PyTorch) + Streamlit.
 - LGG MRI Segmentation (Kaggle / TCGA)
 - 110 patients, ~3,929 slices
 - Image: (256,256,3) | Mask: (256,256) binary
-- Channels: Pre-contrast, FLAIR, Post-contrast
+- Channels: Pre-contrast, FLAIR, Post-contrast  
 - Split: by patient (not slice)
 
 ## Stage 1:
