@@ -16,29 +16,33 @@ Brain tumor segmentation from MRI using **ResU-Net** (PyTorch) + **Streamlit** w
 
 ## 📂 Project Structure
 
+## 📂 Project Structure
+
+```text
 CerebraScan/
 ├── data/
-│ ├── raw/ # dataset (optional sample)
-│ └── splits/ # train.txt, val.txt, test.txt
+│   ├── raw/                     # dataset (optional sample)
+│   └── splits/                  # train.txt, val.txt, test.txt
 ├── models/
-│ ├── unet.py # ResU-Net model
-│ └── weights/
-│ ├── best_model.pth # trained weights
-│ └── curves.png # training curves
+│   ├── unet.py                  # ResU-Net model
+│   └── weights/
+│       ├── best_model.pth       # trained weights
+│       └── curves.png           # training curves
 ├── src/
-│ ├── dataset.py # PyTorch Dataset + DataLoader
-│ ├── utils.py # Loss + metrics
-│ ├── train.py # training script
-│ └── predict.py # inference (upcoming)
+│   ├── dataset.py               # PyTorch Dataset + DataLoader
+│   ├── utils.py                 # Loss + metrics
+│   ├── train.py                 # training script
+│   └── predict.py               # inference (upcoming)
 ├── app/
-│ └── streamlit_app.py # Streamlit UI (upcoming)
+│   └── streamlit_app.py         # Streamlit UI (upcoming)
 ├── notebook/
-│ └── eda.ipynb
+│   └── eda.ipynb
 ├── venv/
 ├── .env
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+```
 
 
 
