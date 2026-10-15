@@ -14,7 +14,6 @@ Brain tumor segmentation from MRI using **ResU-Net** (PyTorch) + **Streamlit** w
 
 ---
 
-## 📂 Project Structure
 
 ## 📂 Project Structure
 
@@ -34,7 +33,7 @@ CerebraScan/
 │   ├── train.py                 # training script
 │   └── predict.py               # inference (upcoming)
 ├── app/
-│   └── streamlit_app.py         # Streamlit UI (upcoming)
+│   └── streamlit_app.py         # Streamlit UI
 ├── notebook/
 │   └── eda.ipynb
 ├── venv/
@@ -149,9 +148,22 @@ CerebraScan/
 
 ## 🚧 Upcoming Stages
 
-- [ ] Stage 8 — Inference (`predict.py`)
-- [ ] Stage 9 — Streamlit web app
+- [x] Stage 8 — Inference (`predict.py`)
+- [x] Stage 9 — Streamlit web app
 - [ ] Stage 10 — Deployment
+
+## ▶️ Run the app
+
+From the repository root:
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
+The app accepts JPG, PNG, and TIFF MRI slices, displays the predicted mask and
+overlay, and provides downloadable PNG results. The checkpoint path is resolved
+from the app location, so the command also works when launched from another
+working directory.
 
 ---
 
@@ -166,4 +178,3 @@ CerebraScan/
 | Visualization | Matplotlib |
 | UI | Streamlit |
 | Training | Kaggle Notebooks (free GPU) |
-
