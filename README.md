@@ -87,7 +87,7 @@ CerebraScan/
 - [x] Class balance: **~34.9% tumor / ~65.1% empty**
 - [x] Tumor area distribution plotted
 
-#### Stage 2 Visualization
+#### Howd data look? Here's a sample overlay of MRI slices with tumor masks:
 
 ![MRI slices with tumor mask overlays](image.png)
 
