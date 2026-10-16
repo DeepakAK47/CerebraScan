@@ -84,8 +84,12 @@ CerebraScan/
 - [x] Mask shape confirmed `(256, 256)`, binary
 - [x] 3 channels visualized (Pre / FLAIR / Post)
 - [x] Image + mask overlay verified
-- [x] Class balance: **~33.6% tumor / ~66% empty**
+- [x] Class balance: **~34.9% tumor / ~65.1% empty**
 - [x] Tumor area distribution plotted
+
+#### Stage 2 Visualization
+
+![MRI slices with tumor mask overlays](image.png)
 
 **Key findings:**
 | Item | Value |
