@@ -44,8 +44,8 @@ CerebraScan/
 ├── notebook/
 │   ├── eda.ipynb
 │   └── README.md                # link to the complete Kaggle notebook
-├── render.yaml                  # Render deployment configuration
-├── venv/
+├── render.yaml                  # Legacy Render configuration
+├── python3.11/                  # Local virtual environment (not required in deployment)
 ├── .env
 ├── .gitignore
 ├── requirements.txt
@@ -199,16 +199,47 @@ area, tumor pixel count, and mean confidence metrics.
 
 ### Stage 10 — Deployment Preparation
 
-- [x] Streamlit app prepared for hosted deployment
-- [x] Dependency file prepared as `requirements.txt`
+- [x] Streamlit Cloud app prepared for hosted deployment
+- [x] Cloud-compatible, pinned dependencies defined in `requirements.txt`
 - [x] Model path resolved relative to the project root
 - [x] Upload, inference, visualization, and result downloads verified locally
+- [x] CPU inference configured without downloading encoder weights at runtime
 
+
+## ☁️ Streamlit Cloud Deployment
+
+CerebraScan is deployed as a Streamlit app using
+[Streamlit Community Cloud](https://share.streamlit.io/). The deployment
+entrypoint is:
+
+```text
+app/streamlit_app.py
+```
+
+To deploy your own copy:
+
+1. Push the repository, including
+   `models/weights/best_model.pth`, to GitHub.
+2. Open [Streamlit Community Cloud](https://share.streamlit.io/) and select
+   **Create app**.
+3. Choose the GitHub repository and the `main` branch.
+4. Set the main file path to `app/streamlit_app.py`.
+5. Select Python 3.11 if a Python version option is available, then deploy.
+
+Streamlit Cloud installs the exact versions listed in `requirements.txt`.
+The application uses CPU inference and does not require secrets or environment
+variables. If dependencies were previously cached, use **Manage app →
+Reboot app** after updating `requirements.txt`.
+
+The application accepts JPG, JPEG, PNG, TIF, and TIFF MRI slices. It displays
+the predicted tumor mask and overlay, reports segmentation metrics, and
+provides PNG downloads. It is intended for research and visual review only,
+not medical diagnosis.
 
 
 ## 🚧 Future Work
 
-- [ ] Monitor the deployed Render service and model performance
+- [ ] Monitor the deployed Streamlit Cloud app and model performance
 
 ## ▶️ Run the app
 
@@ -218,7 +249,7 @@ From the repository root:
 streamlit run app/streamlit_app.py
 ```
 
-Install dependencies first:
+Install the pinned dependencies first:
 
 ```bash
 pip install -r requirements.txt
@@ -237,7 +268,7 @@ working directory.
 |---|---|
 | Language | Python 3.11 |
 | DL Framework | PyTorch, segmentation-models-pytorch |
-| Data | NumPy, Pandas, PIL, OpenCV |
+| Data | NumPy, PIL, OpenCV |
 | Augmentation | Albumentations |
 | Visualization | Matplotlib |
 | UI | Streamlit |
