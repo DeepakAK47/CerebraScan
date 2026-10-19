@@ -1,7 +1,7 @@
 .env
 python3.11
 
-models/weights/*.pth
-models/weights/*.pkl
-*.h5
+# models/weights/*.pth
+# models/weights/*.pkl
+# *.h5
 
