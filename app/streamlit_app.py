@@ -158,9 +158,9 @@ def main():
     # Visual Review
     st.markdown("### 🖼️ Visual Review")
     col1, col2, col3 = st.columns(3)
-    col1.image(input_image, caption="Input MRI", use_container_width=True)
-    col2.image(mask_image, caption="Predicted Mask", use_container_width=True)
-    col3.image(overlay, caption="Tumor Overlay", use_container_width=True)
+    col1.image(input_image, caption="Input MRI", use_column_width=True)
+    col2.image(mask_image, caption="Predicted Mask", use_column_width=True)
+    col3.image(overlay, caption="Tumor Overlay", use_column_width=True)
 
     # Downloads
     st.markdown("### 💾 Download Results")
