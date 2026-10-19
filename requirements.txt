@@ -4,7 +4,7 @@ segmentation-models-pytorch
 numpy
 pandas
 pillow
-opencv-python
+opencv-python-headless==4.10.0.84
 matplotlib
 albumentations
 tqdm
