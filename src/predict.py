@@ -15,7 +15,7 @@ def load_trained_model(weights_path, device):
     if not weights_path.is_file():
         raise FileNotFoundError(f"Model weights not found: {weights_path}")
 
-    model = build_model().to(device)
+    model = build_model(encoder_weights=None).to(device)
     checkpoint = torch.load(weights_path, map_location=device, weights_only=True)
     if not isinstance(checkpoint, dict):
         raise ValueError("The model checkpoint must contain a state dictionary.")
