@@ -98,7 +98,7 @@ CerebraScan/
 
 #### Howd data look? Here's a sample overlay of MRI slices with tumor masks:
 
-![MRI slices with tumor mask overlays](image.png)
+![MRI slices with tumor mask overlays](image4.png)
 
 **Key findings:**
 | Item | Value |
@@ -134,7 +134,7 @@ CerebraScan/
 - [x] `DataLoader` with batch size 16
 - [x] Verified batch shapes: `(16, 3, 256, 256)` + `(16, 1, 256, 256)`
 
-![Data loop like this after passing data pipeline](image4.png)
+![Data loop like this after passing data pipeline](image3.png)
 
 ### Stage 5 — Model (`unet.py`)
 - [x] Built ResU-Net via `segmentation-models-pytorch`
