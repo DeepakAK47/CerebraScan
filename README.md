@@ -204,36 +204,7 @@ area, tumor pixel count, and mean confidence metrics.
 - [x] Model path resolved relative to the project root
 - [x] Upload, inference, visualization, and result downloads verified locally
 
-#### Important deployment note
 
-This project will be deployed as a Streamlit web service on
-[Render](https://render.com/). Render runs the Streamlit server as a
-long-running web service and provides the public application URL.
-
-Before deploying, make sure `models/weights/best_model.pth` is available to
-the host. The checkpoint is approximately 98 MB and is intentionally ignored
-by Git. Store it using Git LFS or a model-artifact store, then update
-`WEIGHTS_PATH` or the deployment environment so the app can load it.
-
-#### Render deployment
-
-The repository includes [`render.yaml`](render.yaml), which defines the
-required Python environment, dependency installation command, and Streamlit
-start command. To deploy:
-
-1. Push the repository to GitHub.
-2. In Render, choose **New → Blueprint** and select the repository.
-3. Confirm the settings from `render.yaml`.
-4. Deploy the service and open the generated public URL.
-
-The equivalent Render settings are:
-
-```text
-Build command: pip install -r requirements.txt
-Start command: streamlit run app/streamlit_app.py --server.address 0.0.0.0 --server.port $PORT
-```
-
----
 
 ## 🚧 Future Work
 
