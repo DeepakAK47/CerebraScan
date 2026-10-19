@@ -10,3 +10,4 @@ albumentations
 tqdm
 scikit-learn
 streamlit
+altair<5
